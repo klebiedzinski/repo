@@ -1,0 +1,86 @@
+#read
+-a array	Store the words in an indexed array named array. Numbering of array elements starts at zero.
+
+-i text	When used in conjunction with -e (and only if -s is not used),
+text is inserted as the initial text of the input line. The user is permitted to edit text on the input line.
+
+-r	Use "raw input".
+
+-s	Do not echo keystrokes when read is taking input from the terminal.
+
+-u fd	Read from the file descriptor fd instead of standard input.
+ The file descriptor should be a small integer. For information about opening a custom file descriptor, see opening file descriptors in bash.
+
+
+##echo
+Opcje								
+-n - Nie wyświetlaj znaku nowej linii
+-e - Włącz interpretację znaków specjalnych
+-E - Wyłącz interpretację znaków specjalnych (domyślnie)
+ciąg znaków (np)
+Ala ma kota
+Dowolny ciąg znaków
+##znaki specjalne
+\0xxx - Znak ASCII o numerze xxx (np. \065)
+\\ - Backslash
+\" - Cudzysłów
+\a - Dźwięk
+\b - Backspace
+\c - Nie wyświetla nowej linii
+\f - Form feed (dodatkowy znak nowej linii)
+\n - Znak nowej linii
+\r - Powrót karetki (Carriage return)
+\t - Tabulacja pozioma
+\v - Tabulacja pionowa
+#tablice 
+https://www.obliczeniowo.com.pl/623
+table=(element element element)
+echo${element[0]}
+[*]/[@] - wszystkie elementy
+${#tablica[@]} - ilosc elementow
+	A=("${tablica[@]}") - A to tablica, kopia tablicy
+	B=("${tablica[*]}") - zmienna B ktora ma w jednej stalej po spacji wszystkie elementy tablicy
+		
+		#PRZECHODZENIE PRZEZ TABLICE
+		read -a table
+
+		x=${#table[@]}
+		echo "$x"
+
+		for (( i=0; i<x; ++i));do
+		echo "${table[$i]}"
+		done
+
+
+
+		read -a table
+		for name in ${table[@]};do
+		echo "$name"
+		done
+
+
+#declare unset
+Wbudowane polecenia declare oraz typeset pozwalają na nadawanie atrybutów i wartości zmiennych powłoki.
+W zasadzie są to dwie różne nazwy tego samego polecenia.
+
+Poniższa tabela pokazuje atrybuty zmiennych używane w przypadku poleceń declare oraz typeset.
+
+Atrybut	Znaczenie
+-a	Deklaruje zmienną jako tablicę
+-f	Deklaruje zmienną jako nazwę funkcji
+-i	Deklaruje zmienną jako wartość typu integer (całkowitego)
+-r	Deklauje zmienną jako tylko do odczytu
+-x	Powoduje wyeksportowanie zmiennej (nadaje jej status zmiennej globalnej)
+-u	Traktuje wartość zmienną wielkimi literami
+-l	Traktuje wartość zmiennej małymi literami
+
+Jeśli chcemy usunąć wybrane atrybuty zmiennej, zamiast znaków - należy użyć znaku +.
+
+#systemy liczbowe
+podstawa#numer
+
+echo $((2#10))
+output: liczba 10 w dwojkowym
+
+
+
