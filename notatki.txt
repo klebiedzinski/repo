@@ -58,7 +58,7 @@ ${#tablica[@]} - ilosc elementow
 		echo "$name"
 		done
 
-
+#PRZYPOMNIJ SE FUNKCJE Z LINUXA
 #declare unset
 Wbudowane polecenia declare oraz typeset pozwalają na nadawanie atrybutów i wartości zmiennych powłoki.
 W zasadzie są to dwie różne nazwy tego samego polecenia.
